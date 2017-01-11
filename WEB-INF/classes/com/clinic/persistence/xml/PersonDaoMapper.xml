@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.clinic.persistence.PersonDao">
+    <insert id="insert" parameterType="com.clinic.domain.Person">
+        insert into person(name,password,sex,telephone,address) 
+        values(#{name},#{password},#{sex},#{telephone},#{address});
+    </insert>
+    
+    <update id="update" parameterType="com.clinic.domain.Person">
+        update person set password=#{password},sex=#{sex},telephone=#{telephone},address=#{address} where id=#{id}
+    </update>
+    
+    <select id="findPersonByName" parameterType="String" resultType="com.clinic.domain.Person">
+        select * from person where name=#{name}
+    </select>
+</mapper>

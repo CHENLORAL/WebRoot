@@ -1,0 +1,307 @@
+/*Comments*********/
+
+.comment-opener, .comment-cur, .comment-text
+{
+	cursor:pointer;
+}
+
+.line-comments, .comment-cur, .comment-text
+{
+	position:absolute;
+}
+
+.line-comments
+{
+	width:98%;
+}
+
+#textcom {
+	margin:0;
+	border:1px solid dimgray;
+	border-radius:5px;
+}
+
+#texte {
+	padding : 0 10px 0 10px;
+	background-color:#fff;
+}
+
+.comment-opener
+{
+	color: #888;
+	float:left;
+	margin: 0 1px;
+	z-index: 1;
+}
+
+.comment-opener.active
+{
+	color: green;
+}
+
+.comment {
+	border-radius: 3px;
+	color: black;
+}
+
+.comment, .comment-text {
+	background: #e8e8e8;
+}
+
+.comment-menu {
+margin:0;
+}
+
+.comment-text
+{
+	z-index:5;
+	padding: 10px 10px 2px 10px;
+	border: 1px solid black;
+}
+
+span.comment.active, .comment-text.active, span.comment.active *{
+	background: lightgray;
+	z-index:10;
+}
+
+.comment-line.active div{
+	background-color:lightgray !important;
+}
+
+ul.comment-menu li {
+	margin: 0;
+	display: inline;
+	list-style: none;
+	padding: 0px 10px 0px 0px;
+}
+
+.comment-static {
+	font-size:80%;
+}
+
+.comment-menu {
+	font-size:80%;
+	color:dimgray;
+}
+
+.comment-menu li span:hover {
+	color:black;
+}
+
+.comment-supprimer {
+	color:#d9534f;
+}
+
+/* see css specificity to explain the strange identifier */
+.comment-menu li .comment-supprimer:hover { 
+	color:#c9302c;
+}
+
+.comment-menu li .comment-confirmer {
+	color:#5cb85c;
+}
+
+.comment-menu li .comment-confirmer:hover {
+	color:#449d44;
+}
+
+.comment-textarea {
+	width:100%;
+	font-size:80%;
+}
+
+
+/*Sentences********/
+
+.s-hactive
+{
+	background:#ddd !important;
+}
+
+/*Linedraw*********/
+
+.s-start:before, .s-end:after, .s-m-end:after
+{
+content : '[';
+color: #999;
+font-size: 150%;
+font-weight:bold;
+}
+
+.s-m-end:after
+{
+content : '|';
+}
+
+.s-end:after
+{
+content : ']';
+}
+
+
+.dl {
+padding:0;
+margin:0;
+line-height:1px;
+position:absolute;
+}
+
+#textcom {
+	width:100%;
+	margin:0;
+	border:1px solid dimgray;
+	border-radius:5px;
+}
+
+#texte {
+	padding : 0 10px 0 10px;
+	background-color:#fff;
+}
+
+#comments 
+{
+	padding: 3px;
+}
+
+
+.line {
+width:100%;
+display:block;
+line-height:1px;
+}
+
+.line span{line-height:1px;font-size:1px}
+
+
+ul {
+	padding:0;
+}
+
+#fixed-part
+{
+	z-index:100;
+	background-color:white;
+}
+
+.fixed
+{
+	width:83.33333333%;
+	position:fixed;
+	top:0;
+	border-bottom: 1px solid dimgray;
+}
+
+.arrow
+{
+	width: 0; 
+	height: 0; 
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 5px solid #777;
+}
+
+.subtext
+{
+	color: #777;
+	padding:0 1px;
+	z-index:6;
+	font-size:70%;
+	line-height:100%;
+	border : 1px solid #777;
+	border-width: 1px 0 0 0;
+	background:white;
+	cursor:pointer;
+}
+
+#texte {
+	background-color:#fff;
+}
+
+#texte_wrap {
+	padding : 10px;
+}
+
+#comments 
+{
+	padding: 3px;
+}
+
+#texte_wrap
+{
+	hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	-webkit-hyphens: none;
+	text-align:left;
+	border-right:1px solid dimgray;
+	cursor:default;
+	-ms-user-select: none;
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+#menu-principal ul, #menu-subcat ul, #menu-elements ul
+{
+	margin:0;
+	padding: 0;
+}
+
+#menu-principal li, #menu-subcat li, #menu-elements li
+{
+	cursor:pointer;
+	display:inline-block;
+	margin : 1px 5px;
+}
+
+.bp {
+	padding-bottom:5px;
+}
+
+.element {
+	background-color:#E0E0E0;
+	padding:2px;
+	font-size:80%;
+}
+
+.menu_label {
+	font-size:80%;
+}
+
+.modal.modal-wide .modal-dialog {
+  width: 80%;
+}
+.modal-wide .modal-body {
+  overflow-y: auto;
+}
+
+.cpt_line
+{
+	cursor:pointer;
+	font-size:14px;
+	margin:0;
+	padding:0;
+}
+
+#capture {
+	background-color:#fff;
+	padding : 0 10px 0 10px;
+	hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	-webkit-hyphens: none;
+	text-align:left;
+	cursor:default;
+	-ms-user-select: none;
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	line-height:20px;
+}
+
+.elipse {
+	font-size:100%;
+	color:dimgray;
+}

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	<constant name="struts.multipart.maxSize" value="1024000000" />
+	<package name="default" namespace="/" extends="struts-default">
+		<default-action-ref name="pagenotfound"></default-action-ref>
+		<action name="pagenotfound">
+			<result>resourceNotFound.jsp</result>
+		</action>
+
+		<action name="login" class="com.clinic.action.IndexAction">
+			<result name="index">index.jsp</result>
+			<result name="success">main.jsp</result>
+		</action>
+		
+		<action name="adminLogin" class="com.clinic.action.IndexAction" method="adminLogin">
+			<result name="index">admin/index.jsp</result>
+			<result name="success">admin/main.jsp</result>
+		</action>
+		
+		<action name="openTreatmentPage" class="com.clinic.action.TreatAction" method="openTreatmentPage">
+			<result name="success">admin/treat.jsp</result>
+		</action>
+		
+		<action name="openTreatmentDetailPage" class="com.clinic.action.TreatAction" method="openTreatmentDetailPage">
+			<result name="success">treatmentDetail.jsp</result>
+		</action>		
+		
+		<action name="openTreatedVisitHistoryPage" class="com.clinic.action.TreatedVisitAction" method="openTreatedVisitHistoryPage">
+			<result name="success">treatedvisitHistory.jsp</result>
+		</action>
+		
+		<action name="openTreatedVisitPage" class="com.clinic.action.TreatedVisitAction" method="openTreatedVisitPage">
+			<result name="success">admin/treatedvisit.jsp</result>
+		</action>
+
+		<action name="registerPatient" class="com.clinic.action.IndexAction" method="register">
+			<result name="error">register.jsp</result>
+			<result name="success">index.jsp</result>
+		</action>
+		
+		<!-- <action name="splitAttentionUserVideos" class="com.clinic.action.AttentionOperation"
+			method="splitTargetUserBehaviourPage">
+			<result name="success">my-addattention.jsp</result>
+			<result name="toLogin">my-login.jsp</result>
+		</action> -->
+
+		<!-- <action name="register" class="com.clinic.action.RegisterAction">
+			<result name="detailRegister">my-info.jsp</result>
+			<param name="rememberme">userRelationship</param>
+			<result name="input">my-register.jsp</result>
+		</action>
+
+		<action name="detailRegister" class="com.clinic.action.DetailRegisterAction"
+			method="detailRegister">
+			<result name="input">my-register.jsp</result>
+		</action>
+
+		<action name="moreVideosByPT" class="com.clinic.action.MoreVideosAction"
+			method="moreVideosByPT">
+			<result name="success">my-group.jsp</result>
+		</action>
+
+		<action name="theMoreVideos" class="com.clinic.action.MoreVideosAction"
+			method="moreVideos">
+			<result name="moreVideos">my-group.jsp</result>
+		</action>
+
+		<action name="import_series" class="com.clinic.action.ImportResourceAction"
+			method="seriesExecute">
+		</action> -->
+
+	</package>
+
+	<!-- ajax请求 -->
+	<package name="json" namespace="/" extends="json-default">
+		<action name="addRegistration" class="com.clinic.action.AjaxAction"
+			method="addRegistration">
+			<result type="json"></result>
+		</action>
+		
+		<action name="addTreatment" class="com.clinic.action.AjaxAction" method="addTreatment">
+			<result type="json"></result>
+		</action>
+		
+		<action name="addTreatedVisit" class="com.clinic.action.AjaxAction" method="addTreatedVisit">
+			<result type="json"></result>
+		</action>
+
+		<!-- <action name="score" class="com.clinic.action.UserBehaviorAction"
+			method="scoreAjax">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+
+		<action name="addAttentionAjax" class="com.clinic.action.UserRelationshipAction"
+			method="addAttentionAjax">
+			<result type="json"></result>
+		</action>
+
+		<action name="commentAjax" class="com.clinic.action.UserBehaviorAction"
+			method="commentAjax">
+			<result type="json"></result>
+		</action>
+
+		<action name="splitPage" class="com.clinic.action.PlayAction"
+			method="splitPage">
+			<result type="json"></result>
+		</action> -->
+	</package>
+</struts>

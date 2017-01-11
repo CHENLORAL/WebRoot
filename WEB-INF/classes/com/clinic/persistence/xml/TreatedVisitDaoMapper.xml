@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.clinic.persistence.TreatedVisitDao">
+	
+    <select id="findTreatedVisitByTreatmentId" parameterType="int" resultType="com.clinic.domain.TreatedVisit">
+        select * from treatedvisit where treatmentId=#{treatmentId}
+    </select>
+    
+    <insert id="insert" parameterType="com.clinic.domain.TreatedVisit">
+        insert into treatedvisit(treatmentId,personId,treatedDescription,date) 
+        values(#{treatmentId},#{personId},#{treatedDescription},#{date});
+    </insert>
+    
+</mapper>

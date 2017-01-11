@@ -1,0 +1,7 @@
+1、welcome.jsp 为登录注册界面
+2、index.jsp 为用户主界面（有用户挂号页面、查看用户的就诊记录页面）
+3、admin.sp 为管理人员（也有医生）界面
+	有查看 就诊记录、收入等功能
+4、treatedVisit.jsp 用于医生 就诊后随访时为某一个就诊记录添加对应的随访记录
+5、revenueList.jsp 显示收入
+6、treatment

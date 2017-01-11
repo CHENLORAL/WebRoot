@@ -1,0 +1,18 @@
+.w
+{
+	cursor:default;
+}
+
+.element:before
+{
+	content:'✔';
+	background-color: #dfd;
+	margin-right: 5px;
+	color:black;
+}
+
+.element.inactive:before
+{
+	content:'✖';
+	background-color: #fdd;
+}

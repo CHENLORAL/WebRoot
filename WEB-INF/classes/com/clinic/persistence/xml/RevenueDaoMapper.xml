@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.clinic.persistence.RevenueDao">
+    <insert id="insert" parameterType="com.clinic.domain.Revenue">
+        insert into revenue(treatmentId,registrationFee,date,revenue,totalCost) 
+        values(#{treatmentId},#{registrationFee},#{date},#{revenue},#{totalCost});
+    </insert>
+    
+    <select id="selectAll" resultType="com.clinic.domain.Revenue">
+        select * from revenue 
+    </select>
+</mapper>

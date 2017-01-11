@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!--  <properties resource="mysql.properties"/>  -->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver"/>
+				<property name="url" value="jdbc:mysql://localhost:3306/clinic"/>
+				<property name="username" value="root"/>
+				<property name="password" value="123456"/>
+				<property name="poolPingEnabled" value="true"/> 
+				<property name="poolPingQuery" value="select 10000 as salary"/> 
+				<property name="poolPingConnectionsNotUsedFor" value="14400000"/> 
+				
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="com/clinic/persistence/xml/PersonDaoMapper.xml"/>
+		<mapper resource="com/clinic/persistence/xml/TreatmentDaoMapper.xml"/>
+		<mapper resource="com/clinic/persistence/xml/RegistrationDaoMapper.xml"/>
+		<mapper resource="com/clinic/persistence/xml/DrugDaoMapper.xml"/>
+		<mapper resource="com/clinic/persistence/xml/DrugRecordDaoMapper.xml"/>
+		<mapper resource="com/clinic/persistence/xml/DrugListDaoMapper.xml"/>
+		<mapper resource="com/clinic/persistence/xml/TreatedVisitDaoMapper.xml"/>
+		<mapper resource="com/clinic/persistence/xml/RevenueDaoMapper.xml"/>
+	</mappers>
+</configuration>

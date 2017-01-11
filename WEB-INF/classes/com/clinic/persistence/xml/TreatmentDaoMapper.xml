@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.clinic.persistence.TreatmentDao">
+    <insert id="insert" parameterType="com.clinic.domain.Treatment">
+        insert into treatment(personId,date,healthDescription,registrationId,suggestion) 
+        values(#{personId},#{date},#{healthDescription},#{registrationId},#{suggestion});
+    </insert>
+    
+    <select id="findTreatmentByPersonId" parameterType="int" resultType="com.clinic.domain.Treatment">
+        select * from treatment where personId=#{personId}
+    </select>
+    
+    <select id="findTreatmentById" parameterType="int" resultType="com.clinic.domain.Treatment">
+        select * from treatment where id=#{id}
+    </select>
+    
+    <select id="findTreatmentDetailById" parameterType="int" resultType="com.clinic.domain.TreatmentDetailVo">
+        SELECT t.id, t.date, p.name, t.healthDescription, re.registrationFee, r.totalCost 
+		from treatment t
+		LEFT JOIN person p on t.personId = p.id
+		LEFT JOIN revenue r on t.id = r.treatmentId
+		LEFT JOIN registration re on t.registrationId = re.id
+		where t.id=#{treatmentId}
+    </select>
+    
+    <select id="findTreatment" parameterType="Map" resultType="com.clinic.domain.Treatment">
+        select * from treatment where personId=#{personId} and registrationId=#{registrationId}
+    </select>
+    
+    <select id="findFinishedTreatment" resultType="com.clinic.domain.Treatment">
+        select * from treatment 
+    </select>
+</mapper>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.clinic.persistence.DrugListDao">
+    <insert id="insert" parameterType="com.clinic.domain.DrugList">
+        insert into druglist(personId,treatmentId,date,listRevenue,description) 
+        values(#{personId},#{treatmentId},#{date},#{listRevenue},#{description});
+    </insert>
+    
+    <select id="findDrugList" parameterType="Map" resultType="com.clinic.domain.DrugList">
+        select * from druglist where personId=#{personId} and treatmentId=#{treatmentId}
+    </select>
+</mapper>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.clinic.persistence.DrugRecordDao">
+    <insert id="insert" parameterType="com.clinic.domain.DrugRecord">
+        insert into drugrecord(drugListId,drugId,number,recordRevenue) 
+        values(#{drugListId},#{drugId},#{number},#{recordRevenue});
+    </insert>
+    
+    <select id="findDrugRecordByTreatmentId" parameterType="int" resultType="com.clinic.domain.DrugRecordVo">
+        select d.name, dr.number, dr.recordRevenue, d.firstCost, d.salePrice 
+        from drugRecord dr 
+        LEFT JOIN drug d on dr.drugId = d.id 
+        where drugListId in (select id from drugList where treatmentId = #{treatmentId})
+    </select>
+</mapper>

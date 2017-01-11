@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.clinic.persistence.DrugDao">
+    <select id="selectAll" resultType="com.clinic.domain.Drug">
+        select * from drug; 
+    </select>
+    
+    <select id="findDrugById" parameterType="int" resultType="com.clinic.domain.Drug">
+        select * from drug where id = #{id}; 
+    </select>
+    
+    <update id="updateDrug" parameterType="com.clinic.domain.Drug">
+        update drug set number = #{number} where id = #{id}
+    </update>
+</mapper>

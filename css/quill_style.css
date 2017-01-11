@@ -1,0 +1,23 @@
+.quill-wrapper {
+  border: 1px solid #ccc;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.editor-container {
+  height: 400px;
+}
+
+.editor-container.tiny {
+  height: 100px;
+}
+
+.toolbar-container {
+  border-bottom: 1px solid #ccc;
+  padding: 8px 14px;
+}
+
+.toolbar-container .ql-active, .toolbar-container button:hover {
+  color: #008000;
+  font-weight: bold;
+}
